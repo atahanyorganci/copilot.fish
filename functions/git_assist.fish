@@ -3,7 +3,7 @@ function git_assist --description 'Translate a natural language description of a
     command github-copilot-cli git-assist $argv --shellout $file
     if test $status -ne 0
         rm -rf $file
-        exit 1
+        return $status
     end
     eval (cat $file)
     rm -rf $file

@@ -3,7 +3,7 @@ function gh_assist --description 'Convert plain english to GitHub CLI commands.'
     command github-copilot-cli gh-assist $argv --shellout $file
     if test $status -ne 0
         rm -rf $file
-        exit 1
+        return $status
     end
     eval (cat $file)
     rm -rf $file

@@ -3,7 +3,7 @@ function what_the_shell --description 'Use GitHub Copilot to get shell commands 
     command github-copilot-cli what-the-shell $argv --shellout $file
     if test $status -ne 0
         rm -rf $file
-        exit 1
+        return $status
     end
     eval (cat $file)
     rm -rf $file
